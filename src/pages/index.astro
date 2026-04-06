@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import FlyoutMenu from '../components/FlyoutMenu.astro';
+import Footer from '../components/Footer.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import CTABlock from '../components/CTABlock.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import PillarCard from '../components/PillarCard.astro';
+import TealDot from '../components/TealDot.astro';
+
+const heroSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Nauman Khan',
+  jobTitle: 'Growth Operator',
+  additionalName: 'Fractional CMO, Venture Partner',
+  url: 'https://nauman-khan.com',
+  image: 'https://nauman-khan.com/nauman-khan.jpg',
+  sameAs: ['https://linkedin.com/in/nauman'],
+  description: '16 years in digital growth. 2 years deploying agentic AI. Founder of Ampere Digital.',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Ampere Digital'
+  }
+};
+---
+
+<BaseLayout
+  title="Nauman Khan — Growth Operator · Fractional CMO · Venture Partner"
+  description="16 years in digital growth. 2 years deploying agentic AI. Marketing built on experience. AI built into operations. Growth built to scale."
+  url="https://nauman-khan.com"
+>
+  <Header />
+  <FlyoutMenu />
+
+  <!-- 01 — HERO -->
+  <SectionContainer bg="bg-brand-deep-slate" id="hero" number={1} label="FOUNDER · OPERATOR · VENTURE PARTNER">
+    <div class="min-h-screen flex flex-col justify-center relative pt-20">
+      <!-- Hero portrait background with teal glow -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute right-0 top-0 w-full h-screen opacity-20 mix-blend-multiply"
+          style="background-image: url('/DSC_4909-Edit copy.jpg'); background-size: cover; background-position: center right;"
+        />
+        <div class="absolute right-0 top-1/2 w-96 h-96 bg-gradient-to-br from-brand-teal/10 to-transparent rounded-full filter blur-3xl" />
+      </div>
+
+      <!-- Hero content -->
+      <div class="relative z-10 max-w-2xl">
+        <h1 class="font-display text-hero font-800 text-brand-text-light mb-8 hero-name" id="hero-name">
+          NAUMAN KHAN
+        </h1>
+
+        <div class="space-y-2 mb-8">
+          <p class="text-brand-text-light-3 text-lg font-light">16 years in digital growth.</p>
+          <p class="text-brand-text-light-3 text-lg font-light">9 years running Ampere Digital.</p>
+          <p class="text-brand-text-light-3 text-lg font-light">2 years building proprietary AI.</p>
+        </div>
+
+        <p class="text-brand-text-light-3 mb-12 max-w-lg">
+          This is where I write about marketing, AI, ventures, and the operating lessons behind building more valuable businesses.
+        </p>
+
+        <div class="flex gap-4 flex-wrap">
+          <CTABlock text="Read the thinking" href="/thinking" variant="dark" icon={true} />
+          <a href="/connect" class="text-brand-text-light hover:text-brand-teal transition font-medium">
+            Connect →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(heroSchema)} />
+  </SectionContainer>
+
+  <!-- 02 — BELIEF STATEMENT -->
+  <SectionContainer bg="bg-brand-ice" id="belief" number={2} label="STATEMENT">
+    <div class="py-32 flex items-center">
+      <h2 class="font-display text-5xl sm:text-6xl font-500 text-brand-text-dark leading-tight max-w-3xl">
+        Marketing is not advertising.
+      </h2>
+    </div>
+    <p class="text-brand-text-dark-2 text-lg max-w-2xl">
+      A whole strategy is involved. A game plan needs to be rolled out. The process of building one that actually works is more predictable than most agencies want you to believe.
+    </p>
+  </SectionContainer>
+
+  <!-- 03 — TWO PILLARS -->
+  <SectionContainer bg="bg-brand-slate" id="pillars" number={3} label="THE APPROACH">
+    <div class="mb-16">
+      <h2 class="font-display text-5xl font-600 text-brand-text-light mb-4">
+        Two pillars. One way of working.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 pb-12 border-b border-brand-mid-slate">
+      <!-- Marketing Pillar -->
+      <div>
+        <span class="font-mono text-xs text-brand-teal tracking-widest uppercase">Marketing</span>
+        <h3 class="text-2xl text-brand-text-light mt-2 mb-4">Sixteen years of capability, experience, and track record.</h3>
+        <p class="text-brand-text-light-3 mb-2">The expertise side.</p>
+        <a href="/marketing" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Learn more →</a>
+      </div>
+
+      <!-- AI Pillar -->
+      <div>
+        <span class="font-mono text-xs text-brand-teal tracking-widest uppercase">AI</span>
+        <h3 class="text-2xl text-brand-text-light mt-2 mb-4">Proprietary AI practice built inside real operations.</h3>
+        <p class="text-brand-text-light-3 mb-2">The advantage side.</p>
+        <a href="/ai" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Learn more →</a>
+      </div>
+    </div>
+
+    <div class="text-center mb-12">
+      <p class="font-mono text-sm text-brand-muted tracking-widest">── TOGETHER ──</p>
+    </div>
+
+    <p class="font-display text-3xl text-brand-text-light text-center italic">
+      Advantage neither could create alone.
+    </p>
+  </SectionContainer>
+
+  <!-- 04 — MARKETING PILLAR DETAIL -->
+  <SectionContainer bg="bg-brand-ice" id="marketing" number={4} label="MARKETING">
+    <div class="mb-12">
+      <h2 class="font-display text-4xl font-600 text-brand-text-dark mb-3">
+        Capability as investment.
+      </h2>
+      <p class="text-brand-text-dark-2 mb-8">
+        Two engagement modalities — both grounded in 16 years of real execution, not borrowed expertise.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white border-t-4 border-brand-teal">
+        <h3 class="font-display text-xl font-600 text-brand-text-dark mb-3">FRACTIONAL CMO</h3>
+        <p class="text-brand-text-dark-2 mb-4">
+          Strategic involvement inside growth-stage companies and portfolio ventures. Equity-linked where the outcome matters more than the hour. Operator-investor model — investing capability, creating growth.
+        </p>
+        <a href="/marketing/fractional-cmo" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Learn more →</a>
+      </div>
+
+      <div class="p-8 bg-white border-t-4 border-brand-teal">
+        <h3 class="font-display text-xl font-600 text-brand-text-dark mb-3">AMPERE DIGITAL</h3>
+        <p class="text-brand-text-dark-2 mb-4">
+          Nine-year-old boutique full-service digital marketing agency. Fully staffed, CMO-level execution across SEO, paid media, content, and conversion systems. Built from zero, serving companies that have scaled from regional to national to international.
+        </p>
+        <a href="/marketing/ampere-digital" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Visit →</a>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <!-- 05 — AI PILLAR DETAIL -->
+  <SectionContainer bg="bg-brand-deep-slate" id="ai" number={5} label="AI">
+    <div class="mb-12">
+      <h2 class="font-display text-4xl font-600 text-brand-text-light mb-3">
+        Proprietary technology as strength.
+      </h2>
+      <p class="text-brand-text-light-3 mb-8">
+        aAi is Ampere's AI research and development practice. It's where we work on hard problems — memory discipline, context architecture, extraction safety, agentic orchestration — and ship the results as systems that run inside real operations.
+      </p>
+    </div>
+
+    <!-- aAi full-width card -->
+    <div class="p-8 bg-brand-slate border-l-4 border-brand-teal mb-8">
+      <h3 class="font-display text-2xl font-600 text-brand-text-light mb-3">aAi (AMPERE AI)</h3>
+      <p class="text-brand-text-light-3 mb-4">
+        The architectural philosophy and toolkit. Where the innovation happens.
+      </p>
+      <a href="/ai/aai" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Learn more →</a>
+    </div>
+
+    <!-- amOS + avOS 2-up -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-brand-slate border-l-4 border-brand-teal">
+        <h3 class="font-display text-xl font-600 text-brand-text-light mb-3">amOS</h3>
+        <p class="text-brand-text-light-3 mb-4">
+          The operating system running Ampere Digital. Agentic orchestration, guardrails, and client workflow automation built from the ground up.
+        </p>
+        <a href="/ai/amos" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Learn more →</a>
+      </div>
+
+      <div class="p-8 bg-brand-slate border-l-4 border-brand-teal">
+        <h3 class="font-display text-xl font-600 text-brand-text-light mb-3">avOS</h3>
+        <p class="text-brand-text-light-3 mb-4">
+          The voice AI architecture behind getampere.ai. Tiered identity verification, memory safety gates, and regulated-grade engineering.
+        </p>
+        <a href="/ai/avos" class="text-brand-teal hover:opacity-80 transition text-sm font-medium">Learn more →</a>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <!-- 06 — HOW I WORK -->
+  <SectionContainer bg="bg-brand-light-alt" id="approach" number={6} label="APPROACH">
+    <div class="mb-12">
+      <h2 class="font-display text-4xl font-600 text-brand-text-dark mb-8">
+        Five things that shape the work.
+      </h2>
+    </div>
+
+    <div class="space-y-6 max-w-3xl">
+      <div class="pl-6 border-l-4 border-brand-teal">
+        <h3 class="font-display text-lg font-600 text-brand-text-dark mb-2 font-mono text-sm">DEEP EXECUTION EXPERIENCE</h3>
+        <p class="text-brand-text-dark-2">
+          16 years across agency, operator, founder, and CMO-style roles. Real execution — not borrowed expertise.
+        </p>
+      </div>
+
+      <div class="pl-6 border-l-4 border-brand-teal">
+        <h3 class="font-display text-lg font-600 text-brand-text-dark mb-2 font-mono text-sm">PROPRIETARY TECH AS LEVERAGE</h3>
+        <p class="text-brand-text-dark-2">
+          Two years of hands-on agentic AI built into real operations. Technology as a business lever, not a trend.
+        </p>
+      </div>
+
+      <div class="pl-6 border-l-4 border-brand-teal">
+        <h3 class="font-display text-lg font-600 text-brand-text-dark mb-2 font-mono text-sm">GROWTH SYSTEMS THINKING</h3>
+        <p class="text-brand-text-dark-2">
+          Traffic, trust, conversion, retention — and how platforms rank for intent. One integrated engine, never isolated tactics.
+        </p>
+      </div>
+
+      <div class="pl-6 border-l-4 border-brand-teal">
+        <h3 class="font-display text-lg font-600 text-brand-text-dark mb-2 font-mono text-sm">OPERATOR-INVESTOR MODEL</h3>
+        <p class="text-brand-text-dark-2">
+          Equity-linked engagements, selective strategic involvement, ownership-oriented value creation.
+        </p>
+      </div>
+
+      <div class="pl-6 border-l-4 border-brand-teal">
+        <h3 class="font-display text-lg font-600 text-brand-text-dark mb-2 font-mono text-sm">COMPLIANCE-GRADE ENGINEERING</h3>
+        <p class="text-brand-text-dark-2">
+          When we build AI, it's architected to the standards that regulated operations require — not demo-grade, production-grade.
+        </p>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <!-- 07 — LATEST THINKING -->
+  <SectionContainer bg="bg-brand-ice" id="thinking" number={7} label="THINKING">
+    <div class="mb-12">
+      <h2 class="font-display text-3xl font-600 text-brand-text-dark mb-2">
+        Operator lessons, marketing frameworks, and AI architecture notes.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <ArticleCard
+        title="Why most growth strategies fail before they start"
+        excerpt="The gap between what companies claim they want and what they're willing to execute."
+        tag="MARKETING"
+        readTime="6"
+        slug="why-growth-strategies-fail"
+        variant="light"
+      />
+      <ArticleCard
+        title="Memory discipline in production AI systems"
+        excerpt="How to build context windows that don't leak. Engineering for safety at scale."
+        tag="AI"
+        readTime="8"
+        slug="memory-discipline-ai"
+        variant="light"
+      />
+      <ArticleCard
+        title="The operator-investor model"
+        excerpt="Selective involvement. Outcome-oriented partnerships. Building with skin in the game."
+        tag="VENTURES"
+        readTime="5"
+        slug="operator-investor-model"
+        variant="light"
+      />
+    </div>
+
+    <a href="/thinking" class="text-brand-teal hover:opacity-80 transition font-medium">
+      View all thinking →
+    </a>
+  </SectionContainer>
+
+  <!-- 08 — CONNECT CTA -->
+  <SectionContainer bg="bg-brand-deep-slate" id="connect-section" number={8} label="CONNECT">
+    <div class="py-32 text-center">
+      <h2 class="font-display text-4xl sm:text-5xl font-600 text-brand-text-light mb-6 max-w-2xl mx-auto">
+        If you're building something interesting — a company, a thesis, a venture, or a new way of working with AI — I'd like to hear about it.
+      </h2>
+
+      <CTABlock text="Start a conversation" href="/connect" variant="dark" icon={true} />
+    </div>
+  </SectionContainer>
+
+  <!-- 09 — FOOTER -->
+  <Footer />
+</BaseLayout>
+
+<script>
+  import gsap from 'gsap';
+  import { TextPlugin } from 'gsap/all';
+
+  gsap.registerPlugin(TextPlugin);
+
+  // Hero name split-text reveal on load
+  const heroName = document.getElementById('hero-name');
+  if (heroName) {
+    const text = heroName.textContent || '';
+    heroName.innerHTML = text
+      .split('')
+      .map((char) => `<span class="hero-char">${char === ' ' ? '&nbsp;' : char}</span>`)
+      .join('');
+
+    const chars = heroName.querySelectorAll('.hero-char');
+    gsap.from(chars, {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      stagger: 0.05,
+      ease: 'power3.out',
+      delay: 0.2
+    });
+  }
+
+  // Fade-in on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-up');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections and cards
+  document.querySelectorAll('section').forEach((el) => {
+    if (el.id !== 'hero') {
+      observer.observe(el);
+    }
+  });
+</script>
+
+<style>
+  .hero-char {
+    display: inline-block;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out;
+  }
+</style>

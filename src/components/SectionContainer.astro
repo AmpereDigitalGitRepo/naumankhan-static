@@ -1,0 +1,25 @@
+---
+interface Props {
+  bg?: string;
+  id?: string;
+  number?: number;
+  label?: string;
+  class?: string;
+}
+
+const { bg = 'bg-brand-ice', id, number, label, class: className } = Astro.props;
+---
+
+<section
+  class={`relative py-28 px-6 ${bg} ${className || ''}`}
+  {id}
+>
+  {number && label && (
+    <div class="absolute top-8 left-6 font-mono text-xs text-brand-teal tracking-widest uppercase">
+      {label} · {String(number).padStart(2, '0')}
+    </div>
+  )}
+  <div class="mx-auto max-w-content">
+    <slot />
+  </div>
+</section>

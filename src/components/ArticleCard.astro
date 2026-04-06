@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  tag: string;
+  readTime: string;
+  slug: string;
+  date?: string;
+  variant?: 'dark' | 'light';
+}
+
+const { title, excerpt, tag, readTime, slug, date, variant = 'light' } = Astro.props;
+const isDark = variant === 'dark';
+---
+
+<a href={`/thinking/${slug}`} class="block group">
+  <div class={`p-6 border border-brand-cool-gray ${isDark ? 'bg-brand-slate' : 'bg-white'} hover:border-brand-teal transition-all duration-200 group-hover:scale-102`}>
+    <div class="flex items-center gap-2 mb-3">
+      <span class="font-mono text-xs text-brand-teal uppercase tracking-widest">{tag}</span>
+      {date && <span class="text-xs text-brand-muted">{date}</span>}
+    </div>
+    <h3 class={`font-display text-lg font-600 mb-2 ${isDark ? 'text-brand-text-light' : 'text-brand-text-dark'}`}>
+      {title}
+    </h3>
+    <p class={`text-sm mb-4 line-clamp-2 ${isDark ? 'text-brand-text-light-3' : 'text-brand-text-dark-2'}`}>
+      {excerpt}
+    </p>
+    <span class="text-xs font-mono text-brand-muted">{readTime} min read</span>
+  </div>
+</a>
+
+<style>
+  .group-hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

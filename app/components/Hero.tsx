@@ -204,10 +204,11 @@ export default function Hero() {
       {/* Carousel Modal */}
       <ModalCarousel isOpen={isCarouselOpen} onClose={() => setIsCarouselOpen(false)} />
 
-      {/* Bottom Text — Animates with scroll */}
+      {/* Bottom Text — Changes based on slide position */}
       <div className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-6 md:left-12 lg:left-24 right-6 md:right-12 lg:right-24 z-10 pointer-events-none flex items-end justify-between">
-        <div className="text-[#14B8A6] font-display text-xl md:text-2xl lg:text-3xl font-bold tracking-tight">
-          Nauman Khan
+        <div className="text-[#14B8A6] font-display text-xl md:text-2xl lg:text-3xl font-bold tracking-tight min-h-10">
+          {currentSlide === 0 && 'Nauman'}
+          {currentSlide === 1 && 'Khan'}
         </div>
         <div className="text-[#A1A1AA] text-xs md:text-sm font-mono uppercase tracking-[0.2em]">
           Scroll to explore

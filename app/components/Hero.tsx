@@ -121,10 +121,11 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-screen h-screen overflow-x-auto overflow-y-hidden bg-[#0a0b14]"
+      className="fixed inset-0 w-screen h-screen overflow-x-auto overflow-y-hidden bg-[#0a0b14]"
       style={{
         scrollBehavior: 'smooth',
         WebkitOverflowScrolling: 'touch',
+        padding: '2rem 1.5rem',
       }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
@@ -187,7 +188,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-black/40" />
 
           {/* Glass Pane Text Overlay - Centered */}
-          <div className="relative z-10 backdrop-blur-md bg-black/20 rounded-2xl p-8 md:p-12 lg:p-16 border border-white/10 max-w-2xl mx-auto text-center">
+          <div className="relative z-10 backdrop-blur-md bg-black/20 rounded-lg border border-white/10 max-w-[600px] mx-4 text-center p-8">
             {/* Label */}
             <p className="text-xs md:text-sm font-mono text-[#14B8A6] uppercase tracking-[0.2em] mb-6">
               {slide.label}

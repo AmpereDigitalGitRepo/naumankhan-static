@@ -10,19 +10,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-transparent w-full">
-      {/* Full-width container with generous padding */}
-      <div className="w-full px-6 md:px-16 lg:px-24 py-10 md:py-14 lg:py-16">
-        {/* Inner centered container */}
-        <div className="w-full max-w-[1400px] mx-auto flex items-center justify-between">
+      {/* Full-width container with responsive padding */}
+      <div className="w-full flex items-center justify-between gap-16" style={{ padding: '2rem 1.5rem' }}>
           {/* Logo/Brand — SVG wordmark */}
           <motion.a
             href="/"
-            className="w-[90px] md:w-[100px] flex-shrink-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <svg
+            className="w-20 md:w-24 flex-shrink-0 block my-4 md:my-5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <svg
               className="w-full h-auto"
               viewBox="0 0 1258.91 497.79"
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +78,6 @@ export default function Header() {
               </svg>
             </motion.button>
           </motion.div>
-        </div>
       </div>
 
       {/* Flyout Menu */}

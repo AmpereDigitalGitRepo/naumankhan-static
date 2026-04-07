@@ -22,6 +22,10 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>{`
+          html, body { scrollbar-width: none; }
+          html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+        `}</style>
       </head>
       <body className="bg-[#0a0b14] text-white antialiased">
         {children}

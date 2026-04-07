@@ -8,10 +8,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="relative w-full">
       <Header />
       <Hero />
-      {/* Page content below hero reveals after all slides are exhausted */}
-    </>
+      {/* Scroll spacer: creates document scroll height to enable vertical scroll mapping */}
+      <div style={{ height: '300vh', backgroundColor: '#0a0b14' }} />
+    </div>
   );
 }

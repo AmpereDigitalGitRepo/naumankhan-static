@@ -1,42 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --font-lexend-tera: 'Lexend Tera', system-ui, sans-serif;
-  --font-inter: 'Inter', system-ui, sans-serif;
-  --font-jetbrains-mono: 'JetBrains Mono', monospace;
-
-  --background: #0a0b14;
-  --foreground: #E4E4E7;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Respect prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

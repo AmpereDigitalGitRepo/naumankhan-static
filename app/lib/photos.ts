@@ -1,0 +1,92 @@
+export const photos = [
+  {
+    filename: 'DSC_4909-Edit-copy.jpg',
+    usage: 'Primary hero',
+    alt: 'Nauman Khan, relaxed authority pose',
+    srcset: [800, 1200, 1600],
+  },
+  {
+    filename: 'DSC_4333-Edit.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, contemplative portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4361.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, cross-armed portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4362.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, direct portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4368-2.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, confident portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4368.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, seated portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4373-2.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, editorial portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4373.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, casual portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4382-2.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan, standing portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4382.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4631.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4636-2.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4636.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4717-2.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan portrait',
+    srcset: [400, 800],
+  },
+  {
+    filename: 'DSC_4779-Edit copy-2.jpg',
+    usage: 'Portrait',
+    alt: 'Nauman Khan portrait',
+    srcset: [400, 800],
+  },
+]

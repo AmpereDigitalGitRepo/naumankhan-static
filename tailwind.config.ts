@@ -1,24 +1,28 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss'
 
 // Nauman Khan — nauman-khan.com
 // Brand Guardrails v2.0 — Aligned with dev.getampere.ai Design System
 // amOS Client: nauman-khan | Stack: Next.js 14 + Tailwind + GSAP
 // Source: dev.getampere.ai color extraction (2026-04-06)
 
-export default {
-  content: ['./app/**/*.{js,jsx,ts,tsx}'],
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
 
       // ─── COLOR SYSTEM ──────────────────────────────────
-      // Dark-first palette: Dark navy + Light + Teal accent (Lusion-inspired)
+      // Minimal dark-first palette: Black/White/Gray only (no accent color)
+      // All sections use dark navy background with light text
       colors: {
         brand: {
-          // Primary palette
+          // Primary palette (dev.getampere.ai sourced)
           'dark':        '#0a0b14',  // Primary dark bg (very dark navy)
           'dark-slate':  '#0F172A',  // Secondary dark, text on light backgrounds
-          'dark-2':      '#1E293B',  // Mid-dark (Section 03)
-          'dark-3':      '#3F3F46',  // Dark secondary text
+          'dark-2':      '#3F3F46',  // Dark secondary text
 
           // Light surfaces
           'light':       '#FFFFFF',  // Primary light surface, button text
@@ -34,13 +38,9 @@ export default {
           'text-dark-2':     '#3F3F46',  // Body text on light (dark gray)
           'text-dark-3':     '#3F3F46',  // Tertiary on light
 
-          // Buttons & CTAs (Lusion-style pill buttons)
-          'button-dark':     '#0F172A',  // Primary button background (dark slate)
+          // Buttons & CTAs
+          'button-dark':     '#000000',  // Primary button background (pure black)
           'button-text':     '#FFFFFF',  // Button text (pure white)
-          'button-secondary': '#FFFFFF', // Secondary button background (white)
-
-          // Accent color
-          'accent':      '#14B8A6',  // Teal (links, highlights, CTAs)
 
           // Muted / structural
           'muted':       '#A1A1AA',  // Timestamps, labels, captions
@@ -146,3 +146,5 @@ export default {
 
   plugins: [],
 }
+
+export default config;

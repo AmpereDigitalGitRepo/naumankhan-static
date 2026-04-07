@@ -1,18 +1,23 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-
-export const metadata = {
-  title: 'Nauman Khan — Growth Operator, AI, Ventures',
-  description: '16 years in digital growth. 2 years building agentic AI. Building what\'s possible.',
-};
+import { Hero } from './sections/Hero'
+import { Gallery } from './sections/Gallery'
+import { TwoPillars } from './sections/TwoPillars'
+import { MarketingDepth } from './sections/MarketingDepth'
+import { AiDepth } from './sections/AiDepth'
+import { Philosophy } from './sections/Philosophy'
+import { Thinking } from './sections/Thinking'
+import { Connect } from './sections/Connect'
 
 export default function Home() {
   return (
-    <div className="relative w-full">
-      <Header />
+    <>
       <Hero />
-      {/* Scroll spacer: creates document scroll height to enable vertical scroll mapping */}
-      <div style={{ height: '300vh', backgroundColor: '#0a0b14' }} />
-    </div>
-  );
+      <Gallery />
+      <TwoPillars />
+      <MarketingDepth />
+      <AiDepth />
+      <Philosophy />
+      <Thinking />
+      <Connect />
+    </>
+  )
 }

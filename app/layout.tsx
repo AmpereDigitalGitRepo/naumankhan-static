@@ -1,34 +1,43 @@
 import type { Metadata } from "next";
+import { Inter, Lexend_Tera, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const lexendTera = Lexend_Tera({
+  subsets: ["latin"],
+  variable: "--font-lexend-tera",
+  weight: ["400", "600", "700", "800"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
-  title: "Nauman Khan — Growth Operator, AI, Ventures",
-  description: "16 years in digital growth. 2 years building agentic AI. Building what's possible.",
-  openGraph: {
-    title: "Nauman Khan — Growth Operator, AI, Ventures",
-    description: "16 years in digital growth. 2 years building agentic AI. Building what's possible.",
-    type: "website",
-    url: "https://nauman-khan.com",
-  },
+  title: "Nauman Khan - Founder, Operator, Venture Partner",
+  description: "Investing capability. Creating growth.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>{`
-          html, body { scrollbar-width: none; }
-          html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
-        `}</style>
-      </head>
-      <body className="bg-[#0a0b14] text-white antialiased">
-        {children}
+    <html lang="en">
+      <body
+        className={`${inter.variable} ${lexendTera.variable} ${jetBrainsMono.variable} bg-brand-dark font-sans text-brand-text-light`}
+      >
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

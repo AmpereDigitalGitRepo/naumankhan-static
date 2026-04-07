@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import FlyoutMenu from './FlyoutMenu';
 
 export default function Header() {
   const [audioEnabled, setAudioEnabled] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-transparent w-full">
@@ -37,9 +39,9 @@ export default function Header() {
             </svg>
           </motion.a>
 
-          {/* Right: Audio Toggle + Let's Talk CTA */}
+          {/* Right: Audio Toggle + Let's Talk CTA + Menu */}
           <motion.div
-            className="flex items-center gap-12 md:gap-16 lg:gap-20"
+            className="flex items-center gap-8 md:gap-12 lg:gap-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -47,7 +49,7 @@ export default function Header() {
             {/* Audio Toggle Button */}
             <motion.button
               onClick={() => setAudioEnabled(!audioEnabled)}
-              className="text-[#A1A1AA] hover:text-[#14B8A6] transition-colors duration-300 text-xs md:text-sm font-medium uppercase tracking-[0.15em]"
+              className="hidden sm:flex text-[#A1A1AA] hover:text-[#14B8A6] transition-colors duration-300 text-xs md:text-sm font-medium uppercase tracking-[0.15em]"
               aria-label={audioEnabled ? 'Mute audio' : 'Unmute audio'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -58,15 +60,31 @@ export default function Header() {
             {/* Let's Talk CTA */}
             <motion.a
               href="#connect"
-              className="inline-flex items-center gap-2 text-[#14B8A6] font-medium text-xs md:text-sm transition-all duration-300 hover:underline"
+              className="hidden sm:inline-flex items-center gap-2 text-[#14B8A6] font-medium text-xs md:text-sm transition-all duration-300 hover:underline"
               whileHover={{ x: 4 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
               Let's talk →
             </motion.a>
+
+            {/* Hamburger Menu Button */}
+            <motion.button
+              onClick={() => setMenuOpen(true)}
+              className="w-10 h-10 rounded-full border border-[#14B8A6]/40 flex items-center justify-center text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Open menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </motion.button>
           </motion.div>
         </div>
       </div>
+
+      {/* Flyout Menu */}
+      <FlyoutMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 }

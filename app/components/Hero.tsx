@@ -51,7 +51,7 @@ export default function Hero() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
 
-  // Track scroll position
+  // Track scroll position (from container drag/scroll)
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -65,6 +65,24 @@ export default function Hero() {
     container.addEventListener('scroll', handleScroll, { passive: true });
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Map window scroll to panoramic slides
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWindowScroll = () => {
+      const slideWidth = container.offsetWidth;
+      const maxScroll = slideWidth * (slides.length - 1);
+      // Map window scroll to slide position (limited to slide range)
+      const windowScrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const targetScroll = windowScrollPercent * maxScroll;
+      container.scrollLeft = targetScroll;
+    };
+
+    window.addEventListener('scroll', handleWindowScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleWindowScroll);
+  }, [slides.length]);
 
   // Handle drag
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -129,6 +147,26 @@ export default function Hero() {
         <div className="absolute left-6 md:left-12 top-1/4 text-[#14B8A6]/30 text-4xl md:text-6xl font-light">+</div>
         <div className="absolute left-1/4 bottom-1/3 text-[#14B8A6]/20 text-3xl md:text-5xl font-light">+</div>
         <div className="absolute right-1/3 top-1/3 text-[#14B8A6]/25 text-4xl md:text-6xl font-light">+</div>
+      </div>
+
+      {/* Drag Indicator — Left Side */}
+      <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+        <div className="flex flex-col items-center gap-2 text-[#14B8A6]/40 hover:text-[#14B8A6]/60 transition-colors">
+          <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="text-xs font-mono uppercase tracking-widest">Drag</span>
+        </div>
+      </div>
+
+      {/* Drag Indicator — Right Side */}
+      <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+        <div className="flex flex-col items-center gap-2 text-[#14B8A6]/40 hover:text-[#14B8A6]/60 transition-colors">
+          <span className="text-xs font-mono uppercase tracking-widest">Drag</span>
+          <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
       </div>
 
       {/* Slides */}

@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-transparent w-full">
       {/* Full-width container with responsive padding */}
-      <div className="w-full flex items-center justify-between gap-16" style={{ padding: '2rem 1.5rem' }}>
+      <div className="w-full flex items-center justify-between gap-16" style={{ padding: '2rem' }}>
           {/* Logo/Brand — SVG wordmark */}
           <motion.a
             href="/"

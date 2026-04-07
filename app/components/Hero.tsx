@@ -125,7 +125,6 @@ export default function Hero() {
       style={{
         scrollBehavior: 'smooth',
         WebkitOverflowScrolling: 'touch',
-        padding: '2rem 1.5rem',
       }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}

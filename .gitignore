@@ -19,3 +19,8 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Media — only track optimized formats
+public/photos/*.jpg
+public/photos/*.jpeg
+public/photos/*.png

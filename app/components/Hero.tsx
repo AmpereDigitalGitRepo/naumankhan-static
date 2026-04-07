@@ -18,7 +18,7 @@ const slides: Slide[] = [
     label: '01 / 04',
     title: 'Founder',
     subtitle: 'Founder. Operator. Venture Partner.',
-    photoUrl: '/photos-optimized/nauman-khan-1.webp',
+    photoUrl: '/photos/slide-1.webp',
     cta: true,
   },
   {
@@ -26,21 +26,21 @@ const slides: Slide[] = [
     label: '02 / 04',
     title: '16 Years',
     subtitle: 'Digital growth across agencies, operators, and founders.',
-    photoUrl: '/photos-optimized/nauman-khan-2.webp',
+    photoUrl: '/photos/slide-2.webp',
   },
   {
     id: 3,
     label: '03 / 04',
     title: 'AI Engineer',
     subtitle: 'Two years building proprietary agentic systems.',
-    photoUrl: '/photos-optimized/nauman-khan-3.webp',
+    photoUrl: '/photos/slide-3.webp',
   },
   {
     id: 4,
     label: '04 / 04',
     title: 'Builder',
     subtitle: 'Operator. Investor. Building what\'s possible.',
-    photoUrl: '/photos-optimized/nauman-khan-4.webp',
+    photoUrl: '/photos/slide-4.webp',
   },
 ];
 

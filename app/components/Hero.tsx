@@ -124,6 +124,13 @@ export default function Hero() {
         }
       `}</style>
 
+      {/* Decorative Plus Signs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute left-6 md:left-12 top-1/4 text-[#14B8A6]/30 text-4xl md:text-6xl font-light">+</div>
+        <div className="absolute left-1/4 bottom-1/3 text-[#14B8A6]/20 text-3xl md:text-5xl font-light">+</div>
+        <div className="absolute right-1/3 top-1/3 text-[#14B8A6]/25 text-4xl md:text-6xl font-light">+</div>
+      </div>
+
       {/* Slides */}
       {slides.map((slide) => (
         <div
@@ -196,6 +203,16 @@ export default function Hero() {
 
       {/* Carousel Modal */}
       <ModalCarousel isOpen={isCarouselOpen} onClose={() => setIsCarouselOpen(false)} />
+
+      {/* Bottom Text — Animates with scroll */}
+      <div className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-6 md:left-12 lg:left-24 right-6 md:right-12 lg:right-24 z-10 pointer-events-none flex items-end justify-between">
+        <div className="text-[#14B8A6] font-display text-xl md:text-2xl lg:text-3xl font-bold tracking-tight">
+          Nauman Khan
+        </div>
+        <div className="text-[#A1A1AA] text-xs md:text-sm font-mono uppercase tracking-[0.2em]">
+          Scroll to explore
+        </div>
+      </div>
     </section>
   );
 }
